@@ -6,6 +6,11 @@ import { useEffect, useCallback } from 'react';
 //
 // highlights the given search terms in the editor
 // then scrolls to the first search term and selects it
+//
+// this version of the plugin is designed to have the editor re-render if
+// highlights need to be turned off. that can lead to the editor "jumping".
+// to avoid that, you can have the plugin fetch search terms from a React context
+// and remove the highlights if the search terms are deleted.
 
 export function SearchHighlighterPlugin({
   searchTerms
